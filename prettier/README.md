@@ -4,14 +4,14 @@ This is the standard Prettier config file for the projects within the @bufferapp
 
 ## Usage
 
-```shell script
-> npm install --save-dev @bufferapp/prettier-config
+```console
+npm install --save-dev @bufferapp/prettier-config prettier
 # or
-> yarn add -D @bufferapp/prettier-config
+yarn add -D @bufferapp/prettier-config prettier
 ```
 
 And then, on your `package.json` use
 
-```json
+```
 "prettier": "@bufferapp/prettier-config"
 ```
