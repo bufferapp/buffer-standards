@@ -1,0 +1,23 @@
+{
+   "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "inlineSources": true,
+        "outDir": "built",
+        "preserveSymlinks": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        ".git",
+        ".vscode",
+        "**/*.test.ts" // Exclude tests
+    ]
+}

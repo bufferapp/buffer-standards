@@ -1,0 +1,16 @@
+{
+  "name": "base-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "built/index.js",
+  "scripts": {"build": "tsc"},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@bufferapp/bufflog": "^0.0.4",
+    "typescript": "4.3.5",
+    "apollo-server": "3.0.0",
+    "env-var": "6.3.0"
+  }
+}
