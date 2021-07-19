@@ -15,7 +15,7 @@ class BaseApp {
     private _state: string
     private _api: ApolloServer
 
-    protected async init(): Promise<void> {
+    public async init(): Promise<void> {
         this._state = 'new'
         this._setupGracefulShutdownHandler()
     }
@@ -72,7 +72,7 @@ class BaseApp {
             typeDefs,
             resolvers,
             context,
-            mocks: DB_STAGE === 'mock' ? mocks : null,
+            mocks: DB_STAGE === 'mocks' ? mocks : null,
             onHealthCheck: async () => {
                 return
             },
