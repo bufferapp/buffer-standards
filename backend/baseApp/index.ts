@@ -1,0 +1,1 @@
+export { BaseApp } from './src/baseApp'
