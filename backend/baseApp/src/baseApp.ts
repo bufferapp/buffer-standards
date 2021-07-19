@@ -41,7 +41,7 @@ class BaseApp {
         process.on('SIGTERM', this.onSigterm.bind(this))
     }
 
-    private onSigterm(): void {
+    public onSigterm(): void {
         const READINESS_PROBE_DELAY = 2 * 2 * 1000 // failureThreshold: 2, periodSeconds: 2 (4s)
         const DEBUG_DELAY = 1 * 1000 // 1s
 
