@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;;AAAO,MAAM,OAAO,GAAG,CAAC,IAAY,EAAE,EAAE,CAAC,SAAS,IAAI,EAAE,CAAC;AAA5C,QAAA,OAAO,WAAqC","sourcesContent":["export const Greeter = (name: string) => `Hello ${name}`;"]}
