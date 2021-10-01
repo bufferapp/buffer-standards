@@ -2,22 +2,28 @@
   "name": "@bufferapp/base-package",
   "version": "1.0.0",
   "description": "A base package to duplicate for writing new backend packages",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
   "scripts": {
-    "test": "jest",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bufferapp/buffer-standards.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["buffer", "package example"],
+  "author": "Buffer engineering",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.0.2",
