@@ -1,7 +1,7 @@
 {
-  "name": "@bufferapp/bufftracer",
+  "name": "@bufferapp/base-package",
   "version": "1.0.0",
-  "description": "A Datadog tracer wrapper library for all js and ts services",
+  "description": "A base package to duplicate for writing new backend packages",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
