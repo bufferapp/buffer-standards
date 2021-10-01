@@ -1,7 +1,7 @@
 {
-  "name": "@bufferapp/base-package",
-  "version": "1.0.0",
-  "description": "A base package to duplicate for writing new backend packages",
+  "name": "@bufferapp/base-backend-package",
+  "version": "0.0.1",
+  "description": "A base package for writing new backend packages.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
