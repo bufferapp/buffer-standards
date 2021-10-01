@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A base package to duplicate for writing new backend packages",
   "main": "index.js",
+  "files": ["lib/**/*"], // Publishes only the lib folder, with the README.md and package.json files
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
