@@ -1,6 +1,6 @@
 {
   "name": "@bufferapp/base-backend-package",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "A base package for writing new backend packages.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -12,18 +12,21 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts",
     "test": "jest",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push . HEAD && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bufferapp/buffer-standards.git"
   },
   "homepage": "https://github.com/bufferapp/buffer-standards/backend/base-backend-package",
-  "keywords": ["buffer", "package example"],
+  "keywords": [
+    "buffer",
+    "package example"
+  ],
   "author": "Buffer engineering",
   "license": "ISC",
   "devDependencies": {
