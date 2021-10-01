@@ -22,6 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/bufferapp/buffer-standards.git"
   },
+  "homepage": "https://github.com/bufferapp/buffer-standards/backend/base-backend-package#readme",
   "keywords": ["buffer", "package example"],
   "author": "Buffer engineering",
   "license": "ISC",

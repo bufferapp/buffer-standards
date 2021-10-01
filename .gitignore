@@ -105,3 +105,6 @@ dist
 
 # PHPSTORM
 .idea
+
+# Typescript Build
+lib
