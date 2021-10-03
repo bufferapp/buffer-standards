@@ -41,7 +41,7 @@ export function parseGraphQLRequest(args: {
   const edge = result.fieldList.shift()?.replace('.', ' ') || 'unknown'
 
   return {
-    name: env.get('API_NAME').required().asString(),
+    name: env.get('DD_SERVICE_NAME').required().asString(),
     type: 'graphql',
     client: getClientFromHeader({ req }),
     edge,

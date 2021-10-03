@@ -18,7 +18,7 @@ export function parseRPCRequest(args: { req: RPCRequest }): APIRequestMetadata {
   )
 
   return {
-    name: env.get('API_NAME').required().asString(),
+    name: env.get('DD_SERVICE_NAME').required().asString(),
     type: 'rpc',
     client: getClientFromHeader({ req }),
     edge,

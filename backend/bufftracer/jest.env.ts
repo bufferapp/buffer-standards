@@ -1,4 +1,3 @@
-process.env.API_NAME = 'foo-api'
 process.env.DD_SERVICE_NAME = 'foo-api'
 process.env.DD_TRACE_AGENT_HOST = 'localhost'
 process.env.DD_TRACE_AGENT_PORT = '80'
