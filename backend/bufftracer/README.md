@@ -2,7 +2,7 @@
 
 A Datadog wrapper library to enable DD APM and tag API traces
 
-# How to use
+## Getting Started
 
 ### Install npm package
 ```shell
@@ -38,3 +38,25 @@ initTracer({
     value: production
 ```
 
+## What it does
+
+The library parses the incoming request, generates metadata, sets DD resource name to be the edge/endpoint and tags the DD span with the metadata.
+
+#### API metadata format
+
+```typescript
+type APIRequestMetadata = {
+  name: 'core-api' | string
+  type: 'graphql' | 'rpc' | 'rest'
+  client: 'buffertools-graphql-playground' | string
+  edge: string
+  fields: Array<string>
+  deprecatedFields: Array<string>
+  args: Array<string>
+}
+```
+
+#### Datadog APM tag
+![image](https://user-images.githubusercontent.com/727592/135768930-aee25005-4af3-49f9-b34a-bbcf0646f320.png)
+
+The DD APM tags are then used to generate DD custom metrics named `api.request`, which we can use to build dashboard and know who is consuming which parts of our API.
