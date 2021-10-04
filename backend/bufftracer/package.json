@@ -1,6 +1,6 @@
 {
   "name": "@bufferapp/bufftracer",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "description": "A Datadog wrapper library to enable DD APM and tag API traces",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@bufferapp/bufflog": "0.3.1",
-    "dd-trace": "^0.30.5",
+    "dd-trace": "1.4.1",
     "env-var": "7.0.1",
     "graphql": "15.6.0"
   }

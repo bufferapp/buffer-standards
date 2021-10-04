@@ -22,10 +22,6 @@ describe('tagSpanTrace', () => {
     },
   }
 
-  const errorCallback = jest.fn((e: Error): void => {
-    console.log(e)
-  })
-
   const mockedSpan = {
     setTag: jest.fn(),
   } as unknown as Span
@@ -35,7 +31,7 @@ describe('tagSpanTrace', () => {
     const span = undefined
 
     // Act
-    tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req)
 
     // Assert
     expect(mockedSpan.setTag).not.toHaveBeenCalled()
@@ -47,7 +43,7 @@ describe('tagSpanTrace', () => {
     mocked(parseGraphQLRequest).mockReturnValue(null)
 
     // Act
-    tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req)
 
     // Assert
     expect(mockedSpan.setTag).not.toHaveBeenCalled()
@@ -70,7 +66,7 @@ describe('tagSpanTrace', () => {
     }
 
     // Act
-    tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req)
 
     // Assert
     expect(mockedSpan.setTag).toHaveBeenCalledTimes(2)
@@ -84,10 +80,9 @@ describe('tagSpanTrace', () => {
     })
 
     // Act
-    tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req)
 
     // Assert
     expect(mockedSpan.setTag).not.toHaveBeenCalled()
-    expect(errorCallback).toHaveBeenCalled()
   })
 })
