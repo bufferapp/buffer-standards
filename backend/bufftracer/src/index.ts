@@ -19,8 +19,8 @@ export function initTracer(
 
   const DD_SERVICE_NAME = env.get('DD_SERVICE_NAME').required().asString()
 
-  const DD_TRACE_AGENT_HOST = env
-    .get('DD_TRACE_AGENT_HOST')
+  const DD_TRACE_AGENT_HOSTNAME = env
+    .get('DD_TRACE_AGENT_HOSTNAME')
     .required()
     .asString()
 
@@ -35,7 +35,7 @@ export function initTracer(
   tracer.init({
     enabled: DD_ENABLE_TRACING,
     service: DD_SERVICE_NAME,
-    hostname: DD_TRACE_AGENT_HOST,
+    hostname: DD_TRACE_AGENT_HOSTNAME,
     port: DD_TRACE_AGENT_PORT,
     env: NODE_ENV || APP_STAGE,
     logInjection: true,
