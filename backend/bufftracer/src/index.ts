@@ -3,6 +3,8 @@ import * as env from 'env-var'
 import { BuffTracerError, GraphQlRequest, RPCRequest } from './types'
 import { tagSpanTrace } from './tagSpanTrace'
 
+export * from './types'
+
 // Export dd-tracer for workers to do tracer.wrap
 export { tracer }
 
