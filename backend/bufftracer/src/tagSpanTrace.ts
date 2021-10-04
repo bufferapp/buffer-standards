@@ -1,5 +1,6 @@
 import {
   APIRequestMetadata,
+  BuffTracerError,
   GraphQlRequest,
   isGraphQlRequest,
   isRPCRequest,
@@ -14,7 +15,7 @@ import { Span } from 'dd-trace'
 export function tagSpanTrace(
   span: Span | undefined,
   req: RPCRequest | GraphQlRequest,
-  errorCallback: (ex: Error) => void,
+  errorCallback: (ex: BuffTracerError) => void,
 ): boolean {
   try {
     if (!span) return false
@@ -33,7 +34,8 @@ export function tagSpanTrace(
     span.setTag(RESOURCE_NAME, metadata.edge)
     span.setTag(TAG_NAME, metadata)
   } catch (e) {
-    errorCallback(e as Error)
+    const error = new BuffTracerError((e as Error).message, req)
+    errorCallback(error)
     return false
   }
   return true

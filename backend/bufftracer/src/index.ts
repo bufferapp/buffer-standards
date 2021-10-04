@@ -1,6 +1,6 @@
 import tracer, { Span, TracerOptions } from 'dd-trace'
 import * as env from 'env-var'
-import { GraphQlRequest, RPCRequest } from './types'
+import { BuffTracerError, GraphQlRequest, RPCRequest } from './types'
 import { tagSpanTrace } from './tagSpanTrace'
 
 // Export dd-tracer for workers to do tracer.wrap
@@ -8,7 +8,7 @@ export { tracer }
 
 export function initTracer(
   tracerOptions: TracerOptions,
-  errorCallback: (ex: Error) => void,
+  errorCallback: (ex: BuffTracerError) => void,
 ): void {
   const DD_SERVICE_NAME = env.get('DD_SERVICE_NAME').required().asString()
 

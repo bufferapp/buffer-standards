@@ -37,3 +37,14 @@ export function isRPCRequest(
 
   return (hasNameInBody || hasMethodInParams) && hasArgsInBody
 }
+
+// todo: use VError in the future
+export class BuffTracerError extends Error {
+  readonly name: string = 'BuffTracerError'
+  readonly req: GraphQlRequest | RPCRequest
+
+  constructor(message: string, req: GraphQlRequest | RPCRequest) {
+    super(`Error while tagging API span: ${message}`)
+    this.req = req
+  }
+}
