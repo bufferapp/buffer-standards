@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@bufferapp/bufflog": "0.3.1",
-    "dd-trace": "1.4.1",
+    "dd-trace": "^0.30.5",
     "env-var": "7.0.1",
     "graphql": "15.6.0"
   }
