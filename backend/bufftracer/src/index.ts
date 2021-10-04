@@ -12,6 +12,11 @@ export function initTracer(
   tracerOptions: TracerOptions,
   errorCallback: (ex: BuffTracerError) => void,
 ): void {
+  const DD_ENABLE_TRACING = env.get('DD_ENABLE_TRACING').required().asBool()
+  if (!DD_ENABLE_TRACING || tracerOptions.enabled === false) {
+    return
+  }
+
   const DD_SERVICE_NAME = env.get('DD_SERVICE_NAME').required().asString()
 
   const DD_TRACE_AGENT_HOST = env
@@ -24,7 +29,6 @@ export function initTracer(
     .required()
     .asString()
 
-  const DD_ENABLE_TRACING = env.get('DD_ENABLE_TRACING').required().asBool()
   const APP_STAGE = env.get('APP_STAGE').default('').asString()
   const NODE_ENV = env.get('NODE_ENV').asString()
 

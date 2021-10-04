@@ -45,6 +45,10 @@ fragment ChannelsFields on AccountOrganization {
 }`
 
 describe('getFragmentASTs', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
   it('returns 2 fragment definition nodes', () => {
     // Arrange
     const ast = parse(query)
@@ -58,6 +62,10 @@ describe('getFragmentASTs', () => {
 })
 
 describe('parseGraphQLRequest', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
   it('returns fields and arguments for nodes, inline fragments and spread fragments', () => {
     // Arrange
     const req: GraphQlRequest = {

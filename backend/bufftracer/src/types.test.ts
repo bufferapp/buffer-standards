@@ -7,6 +7,10 @@ import {
 import { HEADER_CLIENT_ID } from './getClientFromHeader'
 
 describe('typeguards', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
   it('returns isGraphQlRequest:true and isRPCRequest:false', () => {
     // Arrange
     const req: GraphQlRequest = {

@@ -6,6 +6,10 @@ import {
 } from './getClientFromHeader'
 
 describe('getClientFromHeader', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
   it('returns a default value', () => {
     // Arrange
     const req: RPCRequest = {

@@ -3,6 +3,10 @@ import { parseRPCRequest } from './parseRPCRequest'
 import { HEADER_CLIENT_ID } from './getClientFromHeader'
 
 describe('parseRPCRequest', () => {
+  beforeEach(() => {
+    jest.resetAllMocks()
+  })
+
   it('returns metadata from request with name in body', () => {
     // Arrange
     const req: RPCRequest = {
