@@ -1,6 +1,6 @@
 {
   "name": "@bufferapp/base-backend-package",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A base package for writing new backend packages.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
