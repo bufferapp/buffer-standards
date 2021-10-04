@@ -2,8 +2,6 @@ import {
   APIRequestMetadata,
   BuffTracerError,
   GraphQlRequest,
-  isGraphQlRequest,
-  isRPCRequest,
   RPCRequest,
   TAG_NAME,
 } from './types'
@@ -11,6 +9,7 @@ import { parseRPCRequest } from './parseRPCRequest'
 import { parseGraphQLRequest } from './parseGraphQLRequest'
 import { RESOURCE_NAME } from 'dd-trace/ext/tags'
 import { Span } from 'dd-trace'
+import { isGraphQlRequest, isRPCRequest } from './utils'
 
 export function tagSpanTrace(
   span: Span | undefined,

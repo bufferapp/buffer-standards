@@ -1,12 +1,8 @@
-import {
-  GraphQlRequest,
-  isGraphQlRequest,
-  isRPCRequest,
-  RPCRequest,
-} from './types'
+import { GraphQlRequest, RPCRequest } from './types'
 import { HEADER_CLIENT_ID } from './getClientFromHeader'
+import { isGraphQlRequest, isRPCRequest } from './utils'
 
-describe('typeguards', () => {
+describe('isGraphQlRequest & isRPCRequest', () => {
   beforeEach(() => {
     jest.resetAllMocks()
   })
