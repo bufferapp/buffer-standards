@@ -10,14 +10,9 @@ npm install --save-exact @bufferapp/bufftracer
 ```
 
 ### Initialize tracer at the start of the service
+This should be the first import in your `index.ts`file.
 ```typescript
-import { initTracer } from '@bufferapp/bufftracer'
-
-initTracer({
-  // override any dd-tracer configuration here
-}, (error: Error):void => { 
-  // report error with Bufflog and to bugnag
-})
+import '@bufferapp/bufftracer'
 ```
 
 ### Declare the following required env variables in the helm charts of each service

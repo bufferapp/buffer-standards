@@ -1,6 +1,6 @@
 {
   "name": "@bufferapp/bufftracer",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A Datadog wrapper library to enable DD APM and tag API traces",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
