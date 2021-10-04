@@ -30,31 +30,30 @@ describe('tagSpanTrace', () => {
     setTag: jest.fn(),
   } as unknown as Span
 
-  it('returns FALSE on empty span', () => {
+  it('does not call span.setTag on empty span', () => {
     // Arrange
     const span = undefined
 
     // Act
-    const result = tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req, errorCallback)
 
     // Assert
-    expect(result).toBeFalsy()
+    expect(mockedSpan.setTag).not.toHaveBeenCalled()
   })
 
-  it('returns FALSE on empty metadata', () => {
+  it('does not call span.setTag on empty metadata', () => {
     // Arrange
     const span = mockedSpan
     mocked(parseGraphQLRequest).mockReturnValue(null)
 
     // Act
-    const result = tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req, errorCallback)
 
     // Assert
-    expect(result).toBeFalsy()
     expect(mockedSpan.setTag).not.toHaveBeenCalled()
   })
 
-  it('calls span.setTag and returns TRUE when metadata are generated from request', () => {
+  it('calls span.setTag when metadata are generated from request', () => {
     // Arrange
     const span = mockedSpan
     const req: RPCRequest = {
@@ -71,10 +70,9 @@ describe('tagSpanTrace', () => {
     }
 
     // Act
-    const result = tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req, errorCallback)
 
     // Assert
-    expect(result).toBeTruthy()
     expect(mockedSpan.setTag).toHaveBeenCalledTimes(2)
   })
 
@@ -86,10 +84,9 @@ describe('tagSpanTrace', () => {
     })
 
     // Act
-    const result = tagSpanTrace(span, req, errorCallback)
+    tagSpanTrace(span, req, errorCallback)
 
     // Assert
-    expect(result).toBeFalsy()
     expect(mockedSpan.setTag).not.toHaveBeenCalled()
     expect(errorCallback).toHaveBeenCalled()
   })

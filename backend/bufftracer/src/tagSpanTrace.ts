@@ -15,9 +15,9 @@ export function tagSpanTrace(
   span: Span | undefined,
   req: RPCRequest | GraphQlRequest,
   errorCallback: (ex: BuffTracerError) => void,
-): boolean {
+): void {
   try {
-    if (!span) return false
+    if (!span) return
 
     let metadata: APIRequestMetadata | null = null
 
@@ -28,14 +28,12 @@ export function tagSpanTrace(
       metadata = parseGraphQLRequest({ req })
     }
 
-    if (!metadata) return false
+    if (!metadata) return
 
     span.setTag(RESOURCE_NAME, metadata.edge)
     span.setTag(TAG_NAME, metadata)
   } catch (e) {
     const error = new BuffTracerError((e as Error).message, req)
     errorCallback(error)
-    return false
   }
-  return true
 }
