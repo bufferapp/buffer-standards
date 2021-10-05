@@ -13,6 +13,7 @@ import { SelectionNode, SelectionSetNode } from 'graphql/language/ast'
 import { APIRequestMetadata, GraphQlRequest } from './types'
 import { getClientFromHeader } from './getClientFromHeader'
 import * as env from 'env-var'
+import { splitFields } from './splitFields'
 
 export function parseGraphQLRequest(args: {
   req: GraphQlRequest
@@ -45,7 +46,7 @@ export function parseGraphQLRequest(args: {
     type: 'graphql',
     client: getClientFromHeader({ req }),
     edge,
-    fields: result.fieldList,
+    ...splitFields(result.fieldList),
     deprecatedFields: [],
     args: result.argumentList,
   }

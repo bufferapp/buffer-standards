@@ -18,6 +18,8 @@ Object {
     "gateway.gatewayId",
     "billing.MPBilling",
     "billing.subscriptions",
+  ],
+  "fields2": Array [
     "subscriptions.product",
     "subscriptions.plan",
     "billing.OBSubscriptionFields",
@@ -27,6 +29,8 @@ Object {
     "plan.name",
     "subscription.quantity",
     "account.organizations",
+  ],
+  "fields3": Array [
     "organizations.name",
     "organizations.ChannelsFields",
     "organizations.channels",
