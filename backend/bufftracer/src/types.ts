@@ -18,6 +18,16 @@ export type APIMetadataFields = {
   fields8?: Array<string>
   fields9?: Array<string>
   fields10?: Array<string>
+  fields11?: Array<string>
+  fields12?: Array<string>
+  fields13?: Array<string>
+  fields14?: Array<string>
+  fields15?: Array<string>
+  fields16?: Array<string>
+  fields17?: Array<string>
+  fields18?: Array<string>
+  fields19?: Array<string>
+  fields20?: Array<string>
 }
 
 export type APIRequestMetadata = {

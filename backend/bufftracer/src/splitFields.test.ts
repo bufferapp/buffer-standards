@@ -14,10 +14,29 @@ describe('splitFields', () => {
 
     // Act
     const result = splitFields(fields)
-    console.info('result', result)
 
     // Assert
     expect(Object.keys(result)).toHaveLength(1)
+  })
+
+  it('skips __typename fields', () => {
+    // Arrange
+    const fields: Array<string> = [
+      'account.__typename',
+      'account.id',
+      'account.email',
+      'account.currentOrganization',
+      'organization.id',
+      'organization.name',
+    ]
+
+    // Act
+    const result = splitFields(fields)
+
+    // Assert
+    expect(Object.keys(result)).toHaveLength(1)
+    expect(result.fields).toHaveLength(5)
+    expect(result.fields).not.toContain<string>('account.__typename')
   })
 
   it('creates an object with 2 keys', () => {
@@ -48,7 +67,6 @@ describe('splitFields', () => {
 
     // Act
     const result = splitFields(fields)
-    console.info('result', result)
 
     // Assert
     expect(Object.keys(result)).toHaveLength(3)
