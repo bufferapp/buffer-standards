@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseGraphQLRequest returns fields and arguments for nodes, inline fragments and spread fragments 1`] = `
+Object {
+  "args": Array [
+    "query.account.id",
+    "organizations.channels.product",
+  ],
+  "client": "webapp-account",
+  "deprecatedFields": Array [],
+  "edge": "query account",
+  "fields": Array [
+    "account.email",
+    "account.currentOrganization",
+    "currentOrganization.billing",
+    "billing.canAccessEngagement",
+    "billing.gateway",
+    "gateway.gatewayId",
+    "billing.MPBilling",
+    "billing.subscriptions",
+  ],
+  "fields2": Array [
+    "subscriptions.product",
+    "subscriptions.plan",
+    "billing.OBSubscriptionFields",
+    "billing.subscription",
+    "subscription.plan",
+    "plan.id",
+    "plan.name",
+    "subscription.quantity",
+    "account.organizations",
+  ],
+  "fields3": Array [
+    "organizations.name",
+    "organizations.ChannelsFields",
+    "organizations.channels",
+    "channels.id",
+  ],
+  "name": "foo-api",
+  "type": "graphql",
+}
+`;

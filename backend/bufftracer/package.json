@@ -1,7 +1,7 @@
 {
-  "name": "@bufferapp/base-backend-package",
-  "version": "0.0.8",
-  "description": "A base package for writing new backend packages.",
+  "name": "@bufferapp/bufftracer",
+  "version": "0.1.0",
+  "description": "A Datadog wrapper library to enable DD APM and tag API traces",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -22,10 +22,11 @@
     "type": "git",
     "url": "git+https://github.com/bufferapp/buffer-standards.git"
   },
-  "homepage": "https://github.com/bufferapp/buffer-standards/backend/base-backend-package",
+  "homepage": "https://github.com/bufferapp/buffer-standards/backend/bufftracer",
   "keywords": [
     "buffer",
-    "package example"
+    "datadog apm",
+    "graphql"
   ],
   "author": "Buffer engineering",
   "license": "ISC",
@@ -46,5 +47,11 @@
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "@bufferapp/bufflog": "0.3.1",
+    "dd-trace": "1.4.1",
+    "env-var": "7.0.1",
+    "graphql": "15.6.0"
   }
 }

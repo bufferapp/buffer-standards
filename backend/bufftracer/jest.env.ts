@@ -1,0 +1,6 @@
+process.env.DD_SERVICE_NAME = 'foo-api'
+process.env.DD_TRACE_AGENT_HOSTNAME = 'localhost'
+process.env.DD_TRACE_AGENT_PORT = '80'
+process.env.DD_ENABLE_TRACING = 'true'
+process.env.APP_STAGE = 'test'
+process.env.NODE_ENV = 'test'

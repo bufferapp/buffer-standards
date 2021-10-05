@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseRPCRequest returns metadata from request with args as null 1`] = `
+Object {
+  "args": Array [],
+  "client": "webapp-account",
+  "deprecatedFields": Array [],
+  "edge": "rpc getAccount",
+  "fields": Array [],
+  "name": "foo-api",
+  "type": "rpc",
+}
+`;
+
+exports[`parseRPCRequest returns metadata from request with args as object 1`] = `
+Object {
+  "args": Array [
+    "rpc.getAccount.email",
+  ],
+  "client": "webapp-account",
+  "deprecatedFields": Array [],
+  "edge": "rpc getAccount",
+  "fields": Array [],
+  "name": "foo-api",
+  "type": "rpc",
+}
+`;
+
+exports[`parseRPCRequest returns metadata from request with method in params 1`] = `
+Object {
+  "args": Array [
+    "rpc.getAccount.email",
+  ],
+  "client": "webapp-account",
+  "deprecatedFields": Array [],
+  "edge": "rpc getAccount",
+  "fields": Array [],
+  "name": "foo-api",
+  "type": "rpc",
+}
+`;
+
+exports[`parseRPCRequest returns metadata from request with name in body 1`] = `
+Object {
+  "args": Array [
+    "rpc.getAccount.email",
+  ],
+  "client": "webapp-account",
+  "deprecatedFields": Array [],
+  "edge": "rpc getAccount",
+  "fields": Array [],
+  "name": "foo-api",
+  "type": "rpc",
+}
+`;
