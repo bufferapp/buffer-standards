@@ -1,13 +1,11 @@
 - Props declaration
   ```typescript
-      const upgradeCTA = ({ label }: { label?: string}) : React.ReactNode => …
-      // Theoretically we could skip the type definition in this case
-      // as it will be infered from the default values
+      const upgradeCTA = ({ label = 'upgrade' }: { label?: string}) : React.Element => …
   ```
 - useful React props types ([ref](https://github.com/typescript-cheatsheets/react#useful-react-prop-type-examples).)
   ```typescript
       export declare interface AppProps {
-        children: React.ReactNode; // best, accepts everything (see edge case below)
+        children: React.ReactNode;
         functionChildren: (name: string) => React.ReactNode; // recommended function as a child render prop type
         style?: React.CSSProperties; // to pass through style props
         onChange?: React.FormEvent<HTMLInputElement>; // form events! the generic parameter is the type of event.target
@@ -34,4 +32,24 @@
 
   //To fix it, you need to specify the Type of the prop
   margin: 2px 0 ${({ content } : { content: Detail }) => content.images ? '24px' : '0px'} 0;
+  ```
+  
+- Generics
+  ```typescript
+  import React, { useState } from 'react'
+
+  // For props
+  interface WithName {
+    name: string|null;
+  }
+
+  const Foo: React.FC<WithName> = ({ name }) => {
+    return <div>{name}</div>
+  }
+
+  // To strongly type hooks
+  const Bar: React.FC = () => {
+    const [state, setState] = useState<WithName>({ name: 'bar' })
+    return <div>{state.name}</div>
+  }
   ```
