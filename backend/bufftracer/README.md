@@ -19,7 +19,7 @@ import '@bufferapp/bufftracer'
 ```yaml
   // core-api.yaml
 
-  - name: DD_ENABLE_TRACING
+  - name: DD_TRACING_ENABLED
     value: 'true'
   - name: DD_SERVICE_NAME
     value: 'core-api'
