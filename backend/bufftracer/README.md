@@ -55,3 +55,9 @@ type APIRequestMetadata = {
 ![image](https://user-images.githubusercontent.com/727592/135768930-aee25005-4af3-49f9-b34a-bbcf0646f320.png)
 
 The DD APM tags are then used to generate DD custom metrics named `api.request`, which we can use to build dashboard and know who is consuming which parts of our API.
+
+## Migration guide
+
+The version 1.0.0 contains breaking changes. In order to upgrade you need to make the following changes in your application:
+ - Requires Node.js version v18 or greater
+ - Change the environment variable `DD_ENABLE_TRACING` to `DD_TRACING_ENABLED`
