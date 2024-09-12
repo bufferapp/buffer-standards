@@ -1,0 +1,14 @@
+{
+  "name": "@bufferapp/prettier-config",
+  "version": "0.0.1",
+  "description": "Buffer standard Prettier configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike San Román <mike@msanroman.io>",
+  "license": "ISC",
+  "peerDependencies": {
+    "prettier": "^2.0.5"
+  }
+}
